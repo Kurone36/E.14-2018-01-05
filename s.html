@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portal ogłoszeniowy</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styl.css">
+		<script type="text/javascript" >
+		var oblicz = function isCheck() {
+			var isChecked=document.getElementById('i2').checked;
+			var value = document.getElementById('i1').value;
+			var multiplaya = 2;
+			var discount = 1;
+			if(value>50){
+				multiplaya=1; 
+			}
+			if(isChecked){
+				discount=0.2;
+			}
+			var wynik = Math.round(value * multiplaya * discount*100)/100;
+			document.getElementById('wynik').innerHTML = "Twoje ogłoszenia będą kosztować:" + " " + wynik + " " + "PLN.";
+		};
+
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Portal Ogłoszeniowy</h1>
+	</header>
+	<section id="g1">
+		<img src="logo-male.png" alt="logo">
+	</section>
+	<section id="g2">
+		<h3>Adres</h3>
+		<p>ul.Morska 45 Gdynia</p>
+	</section>
+	<section id="g3">
+		<h3>telefon</h3>
+		<p>601601601</p>
+	</section>
+	<section id="g4">
+		<h3>e-mail</h3>
+		<p>ogloszenia@poczta.pl</p>
+	</section>
+	<section id="pl">
+		<h2>ceny ogłoszeń</h2>
+		<table border="1">
+			<tr>
+				<td>Liczba ogłoszeń</td>
+				<td>Cena ogłoszenia</td>
+				<td>Bonus</td>
+			</tr>
+			<tr>
+				<td>1 - 50</td>
+				<td>2 PLN</td>
+				<td rowspan="2">Subskrypcja newslettera to upust 0,20 PLN na ogłoszenie</td>
+			</tr>
+			<tr>
+				<td>51 i więcej</td>
+				<td>1 PLN</td>
+			</tr>
+		</table>
+	</section>
+	<section id="ps">
+		<h2>Witamy na stronie naszego portalu!</h2>
+		<img src="logo-duze.png" alt="ogłoszenia">
+	</section>
+	<section id="pp">
+		<h2>Ile kosztuje ogłoszenie?</h2>
+		<p>Podaj liczbę ogłoszeń</p>
+		<input type="number" id="i1">
+		<br>
+		<input type="checkbox" id="i2">Policz upust na newsletter
+		<br>
+		<button onclick="oblicz()">Oblicz</button>
+		<div id="wynik"></div>
+	</section>
+	<footer>
+		<p>Portal opracował/a 12345678910</p>
+	</footer>
+</body>
+</html>
